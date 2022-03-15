@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+
+    <div class="container">
+        <div class="row g-3">
+            {{ form_start(opinionForm, {'attr': { 'novalidate':'novalidate'}}) }}
+            {{ form_widget(opinionForm )}}
+            <br>
+            <button class="btn btn-dark" type="submit">Enviar</button>
+            {{ form_end(opinionForm) }}
+
+        </div>
+    </div>
+
+
+
+
+{% endblock %}
+
+{% block title %}
+   Nueva Opinion
+{% endblock %}

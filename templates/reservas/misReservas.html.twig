@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h2>Mis Reservas</h2>
+
+    <div class="row">
+
+        {% for reserva in reservas %}
+
+            <div class="col-md-4">
+                <div class="card-body">
+                    <p class="card-test">Nombre: {{ reserva.Nombre }}</p>
+                    <p class="card-test">Fecha: {{ reserva.Fecha | date('d-m-Y') }}</p>
+                    <p class="card-test">Hora: {{ reserva.Hora | date('H:i') }}</p>
+
+                </div>
+
+                <a class="btn btn-secondary" href="{{ path('editarReservas', {'id':reserva.id}) }}">EDITAR</a>
+                <a class="btn btn-secondary" href="{{ path('eliminarReservas', {'id':reserva.id}) }}">ELIMINAR</a>
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+
+{% endblock %}

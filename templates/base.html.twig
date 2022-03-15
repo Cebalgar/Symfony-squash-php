@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Club Squash{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css" rel="stylesheet"/>
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            <script   src="https://code.jquery.com/jquery-3.6.0.slim.min.js"   integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="   crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: chocolate">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img height="80px" src="https://upload.wikimedia.org/wikipedia/commons/9/90/Logotipo_Oficial_Juegos_Parapanamericanos_Lima_2019.png"></a>
+                    <h2>Club Squash Lima</h2>
+                <div class="navbar-nav">
+                    <a class="nav-link active" href="{{path("app_login")}}"><b>Inicio</b> <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ path("misReservas") }}"><b>Mis reservas</b></a>
+                    <a class="nav-link" href="{{ path("reservaPista") }}"><b>Nueva reserva</b></a>
+                    <a class="nav-link" href="{{ path("opinion") }}"><b>Nueva opinión</b></a>
+                    <a class="nav-link" href="{{ path("allOpinions") }}"><b>Opiniones</b></a>
+                    <a class="nav-link" href="{{ path("app_logout") }}"><b>Logout</b></a>
+                </div>
+            </div>
+
+    </nav>
+    <br>
+    <div class="container">
+        {% block body %}{% endblock %}
+    </div>
+
+    </body>
+<br>
+</html>
