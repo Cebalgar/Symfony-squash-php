@@ -2,9 +2,13 @@
 
 {% block body %}
     <div class="container">
-        <div class="row g-3">
+        <h3>Nueva Reserva</h3>
+        <br>
+        <div class="row">
             {{ form_start(reservaForm, {'attr': { 'novalidate':'novalidate'}}) }}
+
             {{ form_widget(reservaForm )}}
+
             <br>
             <button class="btn btn-dark" type="submit">Reservar</button>
             {{ form_end(reservaForm) }}
